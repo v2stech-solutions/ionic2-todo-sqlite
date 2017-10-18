@@ -1,26 +1,39 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# GeoLocation-GoogleMap Application with Ionic 2
 
-## How to use this template
+The **GeoLocation-GoogleMap** is created in Ionic 2 , as well as this is made in order to help people learn and speed up their development process.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+This application will help the users to fetch the current geo-location of user and it will plot that location on google-map.
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+## Installations
 
-### With the Ionic CLI:
+To run the application we have to install some packages and plugins which are as follows:
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+``` sh
+$ npm install @agm/core --save
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
 ```
 
-Then, to run it, cd into `myBlank` and run:
+```sh
+$ ionic cordova plugin add cordova-plugin-geolocation --variable GEOLOCATION_USAGE_DESCRIPTION="YOUR DESCRIPTION"
+```
 
-```bash
-$ ionic cordova platform add ios
+```sh
+$ npm install --save @ionic-native/geolocation
+```
+
+## Launching Application
+
+To run the application on browser use following command
+
+```sh
+
+$ ionic serve
+```
+
+To run the application on your mobile device use the following command
+```sh
+$ ionic cordova run android
+```
+
+```sh
 $ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-

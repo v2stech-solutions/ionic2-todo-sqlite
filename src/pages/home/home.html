@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            ToDo List
+        </ion-title>
+        <ion-buttons end padding>
+            <button ion-button color="secondary" outline (click)="goToAddTodo()">Add</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div><b>Added ToDo's</b></div>
+
+    <ion-list>
+        <ion-item-sliding *ngFor="let todo of addedToDoList; let i = index">
+            <ion-item>
+                <h2>{{todo.title}}</h2>
+                <h2>{{todo.description}}</h2>
+            </ion-item>
+
+            <ion-item-options side="right">
+                <button ion-button color="primary" (click)="editItem(todo,i)">
+                <ion-icon name="edit"></ion-icon>
+                    Edit
+                </button>
+                <button ion-button color="danger" (click)="deleteItem(todo,i)">
+                <ion-icon name="delete"></ion-icon>
+                    Delete
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Add ToDo
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <form>
+
+        <h5>Add ToDo's</h5>
+
+        <div>
+            <ion-label>Title</ion-label>
+            <input type="text" name="title" [(ngModel)]="title" placeholder="Title" required>
+        </div>
+
+        <div>
+            <ion-label>Description</ion-label>
+            <textarea rows="5" name="description" [(ngModel)]="description" placeholder="Description" required></textarea>
+        </div>
+
+
+        <div class="row">
+            <div class="col col-50">
+                <button ion-button (click)="saveRecords()" block>Save</button>
+            </div>
+        </div>
+
+        <ion-list>
+            <ion-item-sliding *ngFor="let todo of addedToDo">
+                <ion-item>
+                    <h2>{{todo.title}}</h2>
+                    <h2>{{todo.description}}</h2>
+                </ion-item>
+
+                <ion-item-options side="right">
+                    <button ion-button color="danger" (click)="removeItem(todo)">
+                <ion-icon name="delete"></ion-icon>
+                    Delete
+                </button>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+    </form>
+</ion-content>
